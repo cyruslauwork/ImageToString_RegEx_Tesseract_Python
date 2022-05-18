@@ -1,0 +1,22 @@
+1 ) Install Anaconda
+2 ) If do not have environment before to import, create one instead using Python3.7
+3 ) In this Anaconda environment, click/pip/conda to install opencv, py-opencv
+4 ) open Terminal/Bash/CMD and type: 
+	conda activate YourVenvName
+	conda install -c conda-forge pytesseract
+	conda install -c conda-forge tesseract
+	conda deactivate
+5 ) Check if '/Users/cyrus/opt/anaconda3/envs/Python3point7/share/tessdata' do not have a 'chi_tra.traineddata', download the 'chi_tra.traineddata' from 'https://github.com/tesseract-ocr/langdata', and put it inside the 'tessdata/'
+6 ) Images should be included in running Python file directory
+7 ) Simple code (Get more in 'https://pypi.org/project/pytesseract/'):
+	try:
+    		from PIL import Image
+	except ImportError:
+    		import Image
+	import pytesseract
+
+	# Traditionsal Chinese text image to string
+	print(pytesseract.image_to_string(Image.open('img/HKID/old.jpg'), lang='chi_tra'))
+
+Ref : https://anaconda.org/conda-forge/tesseract
+	https://anaconda.org/conda-forge/pytesseract
